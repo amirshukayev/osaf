@@ -15,3 +15,16 @@ OCaml REPL tool
 
 > opam install dune
 > opam install utop
+
+## Useful compiler stuff
+
+> ocamlopt
+
+-drawflambda  Print Flambda terms after closure conversion
+-dflambda-invariants  Check Flambda invariants around each pass
+-dflambda-no-invariants  Do not Check Flambda invariants around each pass
+-dflambda-let <stamp>  Print when the given Flambda [Let] is created
+-dflambda-verbose  Print Flambda terms including around each pass
+
+to get flambda
+> opam switch create 4.08.1+flambda 

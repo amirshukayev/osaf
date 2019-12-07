@@ -5,7 +5,9 @@ let secret_read () =
     let _ = 1 in
     secret_filename
 
+let seemingly_safe = secret_read()
+
 let () =
-    let tainted_data = secret_read () in
+    let _ = secret_read () in
     let _ = print_int number in
-    print_string (tainted_data);
+    print_string (seemingly_safe);

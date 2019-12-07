@@ -28,3 +28,16 @@ OCaml REPL tool
 
 to get flambda
 > opam switch create 4.08.1+flambda 
+
+## Progress
+
+### Part 1:
+Finally have super basic taint analysis done, what are the features of it?
+* Works on arbitrary amount of nested, named functions (not lambdas)
+* Intraprocedural only
+* Sinks are print statements, sources are any function/variable appended with "secret_"
+* Can only taint straight from the source
+
+Whats next?
+* Taint variables as we go, probably edit `does_expression_generate_taint` to check some set of tainted variables
+* Intraproceduralness, implement IFDS type thing, where if an arg (not access path) for a function is tainted, the return will be tainted
